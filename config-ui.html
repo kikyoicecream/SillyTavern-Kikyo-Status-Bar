@@ -1,0 +1,43 @@
+<div style="display: flex; flex-direction: column; gap: 1rem; padding: 1rem; max-width: 500px;">
+  <label>標題背景色：<input type="color" id="header-bg" value="#c5d1c0"></label>
+  <label>整體背景色：<input type="color" id="bg-color" value="#DFEBDA"></label>
+  <label>項目文字色：<input type="color" id="item-title-color" value="#475447"></label>
+  <label>進度條標題色：<input type="color" id="progress-title-color" value="#99885a"></label>
+  <label>內文文字色：<input type="color" id="text-color" value="#1F1F1F"></label>
+  <label>進度條起點色：<input type="color" id="bar-start-color" value="#AED1AE"></label>
+  <label>進度條終點色：<input type="color" id="bar-end-color" value="#0B400B"></label>
+  <label>字體大小（px）：<input type="range" id="font-size" min="12" max="20" step="1" value="15"></label>
+</div>
+<script>
+  const root = document.documentElement;
+  const settings = {
+    "header-bg": "--status-header-bg",
+    "bg-color": "--status-bg",
+    "item-title-color": "--status-item-title",
+    "progress-title-color": "--status-progress-title",
+    "text-color": "--status-inner-text",
+    "bar-start-color": "--status-bar-start",
+    "bar-end-color": "--status-bar-end",
+    "font-size": "font-size"
+  };
+  for (const [inputId, cssVar] of Object.entries(settings)) {
+    const input = document.getElementById(inputId);
+    if (!input) continue;
+    const saved = localStorage.getItem("statusbar-" + inputId);
+    if (saved) input.value = saved;
+    const applyValue = (val) => {
+      if (cssVar === "font-size") {
+        document.querySelectorAll(".status-container").forEach(el => {
+          el.style.fontSize = val + "px";
+        });
+      } else {
+        root.style.setProperty(cssVar, val);
+      }
+    };
+    applyValue(input.value);
+    input.addEventListener("input", () => {
+      localStorage.setItem("statusbar-" + inputId, input.value);
+      applyValue(input.value);
+    });
+  }
+</script>
