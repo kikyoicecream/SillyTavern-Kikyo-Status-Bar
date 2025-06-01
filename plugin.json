@@ -1,1 +1,0 @@
-{"display_name": "Kikyo 狀態欄", "loading_order": 100, "requires": [], "optional": [], "js": "index.js", "css": "style.css", "author": "桔梗", "version": "1.3.0", "auto_update": True}
