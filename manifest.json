@@ -1,11 +1,15 @@
 {
-  "id": "kikyo-status-bar",
-  "name": "Kikyo Status Bar",
-  "version": "1.0",
-  "description": "為角色回覆自動插入詳細狀態欄，顯示情緒、行為、好感、愛意與隱藏屬性，支援摺疊區塊與自訂樣式。",
+  "display_name": "Kikyo Status Bar",
+  "loading_order": 100,
+  "requires": [],
+  "optional": [],
+  "js": "extension.js",
+  "css": "style.css",
   "author": "桔梗",
-  "entry": "extension.js",
-  "config": "config-ui.html",
-  "styles": ["style.css"],
-  "tags": ["status", "情緒", "角色屬性", "自訂UI"]
+  "version": "1.0",
+  "homePage": "https://github.com/kikyoicecream/SillyTavern-Kikyo-Status-Bar",
+  "auto_update": true,
+  "i18n": {
+    "zh-tw": "i18n/zh-tw.json"
+  }
 }
