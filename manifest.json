@@ -1,0 +1,1 @@
+{"id": "kikyo-status-bar", "name": "Kikyo Status Bar", "title": "角色狀態欄顯示器（Kikyo）", "version": "1.3", "description": "自動在每則角色回覆末端插入狀態欄，顯示情緒、好感、愛意與隱藏屬性，支援自訂樣式與可摺疊區塊。", "author": "桔梗", "entry": "extension.js", "config": "config-ui.html", "styles": ["style.css"], "defaultEnable": True, "tags": ["status", "角色屬性", "UI擴充", "戀愛模擬", "情緒系統"]}
